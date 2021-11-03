@@ -1471,6 +1471,16 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 543.672, 445.509 )
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = -100
+limit_top = 0
+limit_right = 1125
+limit_bottom = 600
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
 [node name="KillZone" type="Area2D" parent="."]
 position = Vector2( -4.49493, 31.4645 )
 
