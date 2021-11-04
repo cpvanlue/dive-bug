@@ -70,7 +70,7 @@ func lethal_recovery() -> void:
 
 
 func create_fireball(var speed: float) -> void:
-	var fireball = preload("res://src/Fireball.tscn").instance()
+	var fireball = preload("res://src/Fireball/Fireball.tscn").instance()
 	fireball.init(speed)
 	if speed > 0:
 		fireball.position.x = self.position.x + 55

@@ -23,4 +23,4 @@ func _on_Enemy_Killed() -> void:
 
 
 func _on_ReplayButton_pressed():
-	var _ignored = get_tree().change_scene("res://src/MainMenu.tscn")
+	var _ignored = get_tree().change_scene("res://src/MainMenu/MainMenu.tscn")
