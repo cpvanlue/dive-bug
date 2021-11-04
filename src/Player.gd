@@ -30,6 +30,7 @@ func set_direction() -> void:
 			velocity.x = -SPEED * 1.5
 		$AnimatedSprite.flip_h = true
 		if is_on_floor():
+			velocity.x = velocity.x / 2
 			$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("right"):
 		velocity.x = SPEED
@@ -37,6 +38,7 @@ func set_direction() -> void:
 			velocity.x = SPEED * 1.5
 		$AnimatedSprite.flip_h = false
 		if is_on_floor():
+			velocity.x = velocity.x / 1.25
 			$AnimatedSprite.play("walk")
 	
 
