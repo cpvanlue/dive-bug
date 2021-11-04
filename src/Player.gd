@@ -12,6 +12,7 @@ var velocity := Vector2(0, 0)
 func _ready():
 	health = 100
 
+
 func _physics_process(delta: float) -> void:
 	velocity.y = clamp(velocity.y, -250, 150)
 	set_direction()
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = GRAVITY
 	velocity.x = lerp(velocity.x, 0, 0.25)
 
+
 func set_direction() -> void:
 	if Input.is_action_pressed("left"):
 		velocity.x = -SPEED
@@ -30,7 +32,7 @@ func set_direction() -> void:
 			velocity.x = -SPEED * 1.5
 		$AnimatedSprite.flip_h = true
 		if is_on_floor():
-			velocity.x = velocity.x / 2
+			velocity.x = velocity.x / 1.25
 			$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("right"):
 		velocity.x = SPEED
@@ -40,7 +42,7 @@ func set_direction() -> void:
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
 			$AnimatedSprite.play("walk")
-	
+
 
 func check_abilities(delta: float) -> void:
 	if Input.is_action_just_pressed("swim"):
@@ -54,7 +56,7 @@ func check_abilities(delta: float) -> void:
 		velocity.y += GRAVITY * 4 * delta
 
 
-func _on_AnimatedSprite_animation_finished():
+func _on_AnimatedSprite_animation_finished() -> void:
 	if not (Input.is_action_pressed("left") 
 		or Input.is_action_pressed("right") 
 		or $AnimatedSprite.animation == "swim"):
