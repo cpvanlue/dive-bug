@@ -75,9 +75,9 @@ func create_fireball(var speed: float) -> void:
 	var fireball = preload("res://src/Fireball.tscn").instance()
 	fireball.init(speed)
 	if speed > 0:
-		fireball.position.x = self.position.x + 50
+		fireball.position.x = self.position.x + 55
 	else:
-		fireball.position.x = self.position.x - 50
+		fireball.position.x = self.position.x - 55
 	fireball.position.y = self.position.y
 	fireball.connect("enemy_down", get_parent(), "_on_Enemy_Killed")
 	get_parent().add_child(fireball)
