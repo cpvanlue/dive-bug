@@ -46,15 +46,15 @@ func set_direction() -> void:
 
 func check_abilities(delta: float) -> void:
 	if Input.is_action_just_pressed("swim"):
-		$AnimatedSprite.frame = 0
-		$AnimatedSprite.play("swim")
+		$Node2D/AnimatedSprite.frame = 0
+		$Node2D/AnimatedSprite.play("swim")
 		if Input.is_action_pressed("sprint"):
 				velocity.y += swim_impulse * 1.15
 		else:
 			velocity.y += swim_impulse
 	elif Input.is_action_just_pressed("shoot"):
 		if lethal:
-			if $AnimatedSprite.flip_h == true:
+			if $Node2D/AnimatedSprite.flip_h == true:
 				create_fireball(-SPEED * 2)
 			else:
 				create_fireball(SPEED * 2)
@@ -65,7 +65,7 @@ func check_abilities(delta: float) -> void:
 
 func lethal_recovery() -> void:
 	lethal = false
-	$RecoveryTimer.start(0.2); yield($RecoveryTimer, "timeout")
+	$Node2D/RecoveryTimer.start(0.2); yield($Node2D/RecoveryTimer, "timeout")
 	lethal = true
 
 

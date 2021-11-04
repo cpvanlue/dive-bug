@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://assets/fishTilesheet.png" type="Texture" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Level.gd" type="Script" id=3]
+[ext_resource path="res://assets/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -1437,6 +1438,10 @@ extents = Vector2( 75.5128, 684.372 )
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 71.7373, 707.025 )
 
+[sub_resource type="DynamicFont" id=45]
+size = 32
+font_data = ExtResource( 4 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -1502,6 +1507,19 @@ position = Vector2( 1574.38, 1147.75 )
 position = Vector2( -319.03, -707.906 )
 shape = SubResource( 44 )
 
+[node name="ReplayButton" type="Button" parent="."]
+visible = false
+margin_left = 654.748
+margin_top = 379.288
+margin_right = 883.748
+margin_bottom = 452.288
+custom_fonts/font = SubResource( 45 )
+text = "Play Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="body_entered" from="KillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="LEnemyKillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="REnemyKillZone" to="." method="_on_KillZone_body_entered"]
+[connection signal="pressed" from="ReplayButton" to="." method="_on_ReplayButton_pressed"]
