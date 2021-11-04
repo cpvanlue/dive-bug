@@ -56,5 +56,5 @@ func check_abilities(delta: float) -> void:
 
 
 func _on_AnimatedSprite_animation_finished():
-	if not (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+	if not (Input.is_action_pressed("left") or Input.is_action_pressed("right") or $AnimatedSprite.animation == "swim"):
 		$AnimatedSprite.play("idle")
