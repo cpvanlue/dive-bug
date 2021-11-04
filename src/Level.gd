@@ -3,6 +3,7 @@ extends Node2D
 
 signal player_eliminated
 
+
 func _on_KillZone_body_entered(body: Node) -> void:
 	print(str(body.name) + " has been eliminated via a kill zone.")
 	if (body.name == "Player"):
@@ -15,6 +16,7 @@ func _on_KillZone_body_entered(body: Node) -> void:
 	else:
 		body.queue_free()
 	$ReplayButton.visible = true
+
 
 func _on_Enemy_Killed() -> void:
 	print("Score increased by 10.")

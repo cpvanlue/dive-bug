@@ -5,6 +5,7 @@ signal enemy_down
 
 var velocity := Vector2(0,0)
 
+
 func init(var speed: float) -> void:
 	velocity.x = speed
 
