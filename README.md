@@ -28,7 +28,7 @@ Overall I am proud of the progress that I've made. Though there isn't much of an
 - [X] C-6: The release demonstrates the core gameplay loop: the player can take actions that move them toward a goal.
 - [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The game runs without errors or warnings.
-- [ ] B-3: The source code and project structure comply with our adopted style guides.
+- [X] B-3: The source code and project structure comply with our adopted style guides.
 - [X] B-4: Clear progress has been made on the game with respect to the project plan.
 - [X] A-1: The source code contains no warnings. All warnings are properly addressed, not just ignored.
 - [X] A-2: The game includes the conventional player experience loop of title, gameplay, and ending.
@@ -48,7 +48,7 @@ Overall I am proud of the progress that I've made. Though there isn't much of an
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
 
-
+I've earned an A on this submission.
 
 
 ## Third-Party Assets
