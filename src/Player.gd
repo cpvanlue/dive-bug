@@ -1,15 +1,13 @@
 extends KinematicBody2D
 
 
-const SPEED := 200
-const GRAVITY := 150
-
 export var swim_impulse := -400
 
 var health
 var lethal := true
 var velocity := Vector2(0, 0)
-
+var SPEED := 200
+var GRAVITY := 150
 
 func _ready():
 	health = 100
@@ -32,18 +30,18 @@ func set_direction() -> void:
 		velocity.x = -SPEED
 		if Input.is_action_pressed("sprint"):
 			velocity.x = -SPEED * 1.5
-		$AnimatedSprite.flip_h = true
+		$Node2D/AnimatedSprite.flip_h = true
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
-			$AnimatedSprite.play("walk")
+			$Node2D/AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("right"):
 		velocity.x = SPEED
 		if Input.is_action_pressed("sprint"):
 			velocity.x = SPEED * 1.5
-		$AnimatedSprite.flip_h = false
+		$Node2D/AnimatedSprite.flip_h = false
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
-			$AnimatedSprite.play("walk")
+			$Node2D/AnimatedSprite.play("walk")
 
 
 func check_abilities(delta: float) -> void:
@@ -87,5 +85,5 @@ func create_fireball(var speed: float) -> void:
 func _on_AnimatedSprite_animation_finished() -> void:
 	if not (Input.is_action_pressed("left") 
 		or Input.is_action_pressed("right") 
-		or $AnimatedSprite.animation == "swim"):
-			$AnimatedSprite.play("idle")
+		or $Node2D/AnimatedSprite.animation == "swim"):
+			$Node2D/AnimatedSprite.play("idle")
