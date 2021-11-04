@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	var _ignored = move_and_slide(velocity, Vector2(0, -1))
 	if velocity.y > GRAVITY:
 		velocity.y = GRAVITY
-	velocity.x = lerp(velocity.x, 0, 0.15)
+	velocity.x = lerp(velocity.x, 0, 0.25)
 
 func set_direction() -> void:
 	if Input.is_action_pressed("left"):
@@ -41,9 +41,6 @@ func set_direction() -> void:
 	
 
 func check_abilities(delta: float) -> void:
-	if Input.is_action_pressed("crouch") and is_on_floor():
-		$AnimatedSprite.play("crouch")
-		velocity.x = velocity.x / 2
 	if Input.is_action_just_pressed("swim"):
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.play("swim")
@@ -56,5 +53,7 @@ func check_abilities(delta: float) -> void:
 
 
 func _on_AnimatedSprite_animation_finished():
-	if not (Input.is_action_pressed("left") or Input.is_action_pressed("right") or $AnimatedSprite.animation == "swim"):
-		$AnimatedSprite.play("idle")
+	if not (Input.is_action_pressed("left") 
+		or Input.is_action_pressed("right") 
+		or $AnimatedSprite.animation == "swim"):
+			$AnimatedSprite.play("idle")
