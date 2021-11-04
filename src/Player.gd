@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
+
 const SPEED := 200
 const GRAVITY := 150
 
 export var swim_impulse := -400
 
 var health
+var lethal := true
 var velocity := Vector2(0, 0)
 
 
@@ -52,8 +54,34 @@ func check_abilities(delta: float) -> void:
 				velocity.y += swim_impulse * 1.15
 		else:
 			velocity.y += swim_impulse
+	elif Input.is_action_just_pressed("shoot"):
+		if lethal:
+			if $AnimatedSprite.flip_h == true:
+				create_fireball(-SPEED * 2)
+			else:
+				create_fireball(SPEED * 2)
+			lethal_recovery()
 	else:
 		velocity.y += GRAVITY * 4 * delta
+
+
+func lethal_recovery() -> void:
+	lethal = false
+	$RecoveryTimer.start(0.2); yield($RecoveryTimer, "timeout")
+	lethal = true
+
+
+func create_fireball(var speed: float) -> void:
+	var fireball = preload("res://src/Fireball.tscn").instance()
+	fireball.init(speed)
+	if speed > 0:
+		fireball.position.x = self.position.x + 50
+	else:
+		fireball.position.x = self.position.x - 50
+	fireball.position.y = self.position.y
+	fireball.connect("enemy_down", get_parent(), "_on_Enemy_Killed")
+	get_parent().add_child(fireball)
+	get_parent().move_child(fireball, 3)
 
 
 func _on_AnimatedSprite_animation_finished() -> void:

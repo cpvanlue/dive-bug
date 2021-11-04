@@ -9,3 +9,6 @@ func _on_KillZone_body_entered(body: Node) -> void:
 	if (body.name == "Player"):
 		emit_signal("player_eliminated")
 		print("Player death has occurred. Game over.")
+
+func _on_Enemy_Killed() -> void:
+	print("Score increased by 10.")
