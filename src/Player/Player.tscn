@@ -10,7 +10,7 @@ height = 20.514
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 216, 96, 72, 96 )
+region = Rect2( 0, 96, 72, 96 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -20,12 +20,12 @@ region = Rect2( 0, 96, 72, 96 )
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 96, 72, 96 )
+region = Rect2( 72, 96, 72, 96 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 72, 96, 72, 96 )
+region = Rect2( 0, 0, 72, 96 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -35,39 +35,39 @@ region = Rect2( 0, 0, 72, 96 )
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 72, 96 )
+region = Rect2( 144, 0, 72, 96 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 144, 0, 72, 96 )
+region = Rect2( 72, 0, 72, 96 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 72, 0, 72, 96 )
+region = Rect2( 216, 96, 72, 96 )
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ) ],
-"loop": true,
 "name": "dead",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": false,
 "name": "swim",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=11]
@@ -110,18 +110,18 @@ script = ExtResource( 2 )
 position = Vector2( 1.5874, 8.33386 )
 shape = SubResource( 1 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Animations" type="Node2D" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Animations"]
 position = Vector2( 0, 8.731 )
 scale = Vector2( 1.00736, 1 )
 frames = SubResource( 10 )
 animation = "dead"
 playing = true
 
-[node name="RecoveryTimer" type="Timer" parent="Node2D"]
+[node name="RecoveryTimer" type="Timer" parent="Animations"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
 anims/death = SubResource( 11 )
 
-[connection signal="animation_finished" from="Node2D/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="Animations/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
