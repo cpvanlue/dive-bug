@@ -23,4 +23,4 @@ func _on_Enemy_Killed() -> void:
 
 
 func _on_ReplayButton_pressed() -> void:
-	var _returnValue = get_tree().change_scene("src/MainMenu/MainMenu.tscn")
+	var _returnValue = get_tree().change_scene("project/MainMenu/MainMenu.tscn")
