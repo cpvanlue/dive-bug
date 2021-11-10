@@ -1,8 +1,6 @@
 extends Node2D
 
 
-signal player_eliminated
-
 export var enemyHealth := 1
 
 var spawning := true
