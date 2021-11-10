@@ -23,13 +23,7 @@ func _process(_delta: float) -> void:
 func _on_KillZone_body_entered(body: Node) -> void:
 	print(str(body.name) + " has been eliminated via a kill zone.")
 	if (body.name == "Player"):
-		$Player.gravity = 0
-		$Player.speed = 0
-		$Player.velocity = Vector2(0,0)
-		$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
-		emit_signal("player_eliminated")
-		body.queue_free()
-		$ReplayButton.visible = true
+		_on_Player_player_death()
 	else:
 		body.queue_free()
 
@@ -56,3 +50,12 @@ func difficultyIncrease() -> void:
 		spawnInterval = spawnInterval * 0.95
 		$DifficultyTimer.start(5); yield($DifficultyTimer, "timeout")
 		difficultyIncreasing = true
+
+
+func _on_Player_player_death():
+	$Player.gravity = 0
+	$Player.speed = 0
+	$Player.velocity = Vector2(0,0)
+	$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
+	$Player.queue_free()
+	$ReplayButton.visible = true

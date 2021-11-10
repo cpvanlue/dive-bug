@@ -1523,6 +1523,7 @@ __meta__ = {
 
 [node name="DifficultyTimer" type="Timer" parent="."]
 
+[connection signal="player_death" from="Player" to="." method="_on_Player_player_death"]
 [connection signal="body_entered" from="KillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="LEnemyKillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="REnemyKillZone" to="." method="_on_KillZone_body_entered"]

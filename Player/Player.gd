@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+signal player_death
+
 export var swim_impulse := -400
 export var speed := 200
 export var gravity := 150
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if health == 0:
-		self.queue_free()
+		emit_signal("player_death")
 	velocity.y = clamp(velocity.y, -250, 150)
 	_set_direction()
 	_check_abilities(delta)
@@ -30,7 +32,6 @@ func _physics_process(delta: float) -> void:
 			_immunityTimer()
 			health -= 1
 			print(health)
-			
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
