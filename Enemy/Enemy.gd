@@ -1,14 +1,17 @@
 extends KinematicBody2D
 
 
-export var speed := 100
+export var speed := 150.0
 
+var minSpeed := 75.0
+var maxSpeed := 200.0
 var health := 1
 var velocity := Vector2.ZERO
-var height := randi() % 640
+var height := rand_range(0, 640)
 var dir := true
 
 func _init() -> void:
+	speed = rand_range(minSpeed, maxSpeed)
 	if randi() % 2:
 		dir = false
 	if dir:

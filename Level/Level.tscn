@@ -1521,6 +1521,8 @@ __meta__ = {
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 
+[node name="DifficultyTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="KillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="LEnemyKillZone" to="." method="_on_KillZone_body_entered"]
 [connection signal="body_entered" from="REnemyKillZone" to="." method="_on_KillZone_body_entered"]

@@ -4,9 +4,13 @@ extends Node2D
 signal player_eliminated
 
 var spawning := true
-
+var difficultyIncreasing := true
+var spawnInterval := 2.0
+var minEnemySpeed := 200.0
+var maxEnemySpeed := 75.0
 
 func _process(_delta: float) -> void:
+	difficultyIncrease()
 	if spawning:
 		var enemy = preload("res://Enemy/Enemy.tscn").instance()
 		if !enemy.dir:
@@ -38,5 +42,13 @@ func _on_ReplayButton_pressed() -> void:
 
 func spawnTimer() -> void:
 	spawning = false
-	$EnemySpawnTimer.start(2); yield($EnemySpawnTimer, "timeout")
+	$EnemySpawnTimer.start(spawnInterval); yield($EnemySpawnTimer, "timeout")
 	spawning = true
+
+
+func difficultyIncrease() -> void:
+	if difficultyIncreasing:
+		difficultyIncreasing = false
+		spawnInterval = spawnInterval * 0.95
+		$DifficultyTimer.start(5); yield($DifficultyTimer, "timeout")
+		difficultyIncreasing = true

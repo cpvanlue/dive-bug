@@ -12,10 +12,12 @@ var velocity := Vector2(0, 0)
 
 
 func _ready() -> void:
-	health = 100
+	health = 3
 
 
 func _physics_process(delta: float) -> void:
+	if health == 0:
+		self.queue_free()
 	velocity.y = clamp(velocity.y, -250, 150)
 	_set_direction()
 	_check_abilities(delta)
@@ -26,6 +28,9 @@ func _physics_process(delta: float) -> void:
 		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
 			print("I have collided with an enemy. Immune for 3 seconds.")
 			_immunityTimer()
+			health -= 1
+			print(health)
+			
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
