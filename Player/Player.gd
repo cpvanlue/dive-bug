@@ -7,6 +7,7 @@ export var gravity := 150
 
 var health
 var lethal := true
+var immunity := false
 var velocity := Vector2(0, 0)
 
 
@@ -20,10 +21,21 @@ func _physics_process(delta: float) -> void:
 	_check_abilities(delta)
 	if is_on_ceiling():
 		velocity.y = 50
-	var _ignored = move_and_slide(velocity, Vector2(0, -1))
+	var _velocity = move_and_slide(velocity, Vector2(0, -1))
+	for i in get_slide_count():
+		if get_slide_collision(i).collider.name == "Enemy" and !immunity:
+			print("I have collided with an enemy. Immune for 3 seconds.")
+			_immunityTimer()
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
+
+
+func _immunityTimer() -> void:
+	immunity = true
+	$Animations/ImmunityTimer.start(3); yield($Animations/ImmunityTimer, "timeout")
+	immunity = false
+	
 
 
 func _set_direction() -> void:

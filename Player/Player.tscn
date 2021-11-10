@@ -124,4 +124,6 @@ playing = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animations"]
 anims/death = SubResource( 11 )
 
+[node name="ImmunityTimer" type="Timer" parent="Animations"]
+
 [connection signal="animation_finished" from="Animations/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
