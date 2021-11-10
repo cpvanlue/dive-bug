@@ -17,5 +17,7 @@ func _physics_process(delta: float) -> void:
 		if (collision.collider.name == "TileMap"):
 			self.queue_free()
 		elif ("Enemy" in collision.collider.name):
-			self.queue_free()
 			emit_signal("enemy_down")
+			get_parent().get_node(collision.collider.name).queue_free()
+			self.queue_free()
+

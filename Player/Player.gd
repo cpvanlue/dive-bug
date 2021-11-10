@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 50
 	var _velocity = move_and_slide(velocity, Vector2(0, -1))
 	for i in get_slide_count():
-		if get_slide_collision(i).collider.name == "Enemy" and !immunity:
+		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
 			print("I have collided with an enemy. Immune for 3 seconds.")
 			_immunityTimer()
 	if velocity.y > gravity:
@@ -33,7 +33,13 @@ func _physics_process(delta: float) -> void:
 
 func _immunityTimer() -> void:
 	immunity = true
-	$Animations/ImmunityTimer.start(3); yield($Animations/ImmunityTimer, "timeout")
+	set_collision_mask_bit(1, false)
+	set_collision_layer_bit(1, false)
+	$Animations/AnimatedSprite.animation = "dead"
+	$Animations/ImmunityTimer.start(2); yield($Animations/ImmunityTimer, "timeout")
+	$Animations/AnimatedSprite.animation = "idle"
+	set_collision_mask_bit(1, true)
+	set_collision_layer_bit(1, true)
 	immunity = false
 	
 
@@ -46,7 +52,8 @@ func _set_direction() -> void:
 		$Animations/AnimatedSprite.flip_h = true
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
-			$Animations/AnimatedSprite.play("walk")
+			if !immunity:
+				$Animations/AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
 		if Input.is_action_pressed("sprint"):
@@ -54,13 +61,15 @@ func _set_direction() -> void:
 		$Animations/AnimatedSprite.flip_h = false
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
-			$Animations/AnimatedSprite.play("walk")
+			if !immunity:
+				$Animations/AnimatedSprite.play("walk")
 
 
 func _check_abilities(delta: float) -> void:
 	if Input.is_action_just_pressed("swim"):
 		$Animations/AnimatedSprite.frame = 0
-		$Animations/AnimatedSprite.play("swim")
+		if !immunity:
+			$Animations/AnimatedSprite.play("swim")
 		if Input.is_action_pressed("sprint"):
 				velocity.y += swim_impulse * 1.15
 		else:
@@ -90,7 +99,7 @@ func _create_fireball(ballSpeed: float) -> void:
 	else:
 		fireball.position.x = self.position.x - 55
 	fireball.position.y = self.position.y
-	fireball.connect("enemy_down", get_parent(), "_on_Enemy_Killed")
+	fireball.connect("enemy_down", get_parent(), "_on_Enemy_Killed", [], CONNECT_ONESHOT)
 	get_parent().add_child(fireball)
 	get_parent().move_child(fireball, 3)
 
@@ -99,4 +108,5 @@ func _on_AnimatedSprite_animation_finished() -> void:
 	if not (Input.is_action_pressed("left") 
 		or Input.is_action_pressed("right") 
 		or $Animations/AnimatedSprite.animation == "swim"):
-			$Animations/AnimatedSprite.play("idle")
+			if !immunity:
+				$Animations/AnimatedSprite.play("idle")

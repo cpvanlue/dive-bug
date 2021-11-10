@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.1492
-height = 21.7802
+height = 29.2168
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -41,6 +41,9 @@ animations = [ {
 } ]
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 10
+collision/safe_margin = 0.001
 script = ExtResource( 2 )
 
 [node name="EnemyBody" type="CollisionShape2D" parent="."]
@@ -51,3 +54,5 @@ shape = SubResource( 1 )
 frames = SubResource( 6 )
 animation = "swim"
 playing = true
+
+[node name="LayerTimer" type="Timer" parent="."]
