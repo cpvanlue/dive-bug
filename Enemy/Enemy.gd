@@ -27,5 +27,7 @@ func init(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> Kin
 
 
 func _physics_process(delta: float) -> void:
+	if health == 0:
+		self.queue_free()
 	var _collision = move_and_collide(velocity * delta)
 	

@@ -18,6 +18,6 @@ func _physics_process(delta: float) -> void:
 			self.queue_free()
 		elif ("Enemy" in collision.collider.name):
 			emit_signal("enemy_down")
-			get_parent().get_node(collision.collider.name).queue_free()
+			get_parent().get_node(collision.collider.name).health -= 1
 			self.queue_free()
 
