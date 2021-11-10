@@ -13,9 +13,10 @@ func _on_KillZone_body_entered(body: Node) -> void:
 		$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
 		emit_signal("player_eliminated")
 		body.queue_free()
+		$ReplayButton.visible = true
 	else:
 		body.queue_free()
-	$ReplayButton.visible = true
+
 
 
 func _on_Enemy_Killed() -> void:
