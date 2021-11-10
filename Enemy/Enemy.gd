@@ -5,12 +5,15 @@ export var speed := 150.0
 
 var minSpeed := 75.0
 var maxSpeed := 200.0
-var health := 1
+var health
 var velocity := Vector2.ZERO
 var height := rand_range(0, 640)
 var dir := true
 
-func _init() -> void:
+func init(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
+	health = parameterHealth
+	minSpeed = minimumSpeed
+	maxSpeed = maximumSpeed
 	speed = rand_range(minSpeed, maxSpeed)
 	if randi() % 2:
 		dir = false
@@ -20,6 +23,7 @@ func _init() -> void:
 	else:
 		velocity.x = -speed
 		position = Vector2(1100, height)
+	return self
 
 
 func _physics_process(delta: float) -> void:

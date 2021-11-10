@@ -3,6 +3,8 @@ extends Node2D
 
 signal player_eliminated
 
+export var enemyHealth := 1
+
 var spawning := true
 var difficultyIncreasing := true
 var spawnInterval := 2.0
@@ -12,7 +14,7 @@ var maxEnemySpeed := 75.0
 func _process(_delta: float) -> void:
 	difficultyIncrease()
 	if spawning:
-		var enemy = preload("res://Enemy/Enemy.tscn").instance()
+		var enemy = preload("res://Enemy/Enemy.tscn").instance().init(enemyHealth, minEnemySpeed, maxEnemySpeed)
 		if !enemy.dir:
 			enemy.get_child(1).flip_h = true
 		add_child_below_node($TileMap, enemy)
@@ -49,6 +51,8 @@ func spawnTimer() -> void:
 func difficultyIncrease() -> void:
 	if difficultyIncreasing:
 		difficultyIncreasing = false
+		minEnemySpeed += 10
+		maxEnemySpeed += 10
 		spawnInterval = spawnInterval * 0.95
 		$DifficultyTimer.start(5); yield($DifficultyTimer, "timeout")
 		difficultyIncreasing = true
