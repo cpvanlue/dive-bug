@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 		add_child_below_node($TileMap, enemy)
 		spawnTimer()
 
+
 func _on_KillZone_body_entered(body: Node) -> void:
 	print(str(body.name) + " has been eliminated via a kill zone.")
 	if (body.name == "Player"):

@@ -28,6 +28,14 @@ func init(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> Kin
 
 func _physics_process(delta: float) -> void:
 	if health == 0:
-		self.queue_free()
-	var _collision = move_and_collide(velocity * delta)
-	
+		deathAnimation()
+		set_physics_process(false)
+	else:
+		var _collision = move_and_collide(velocity * delta)
+
+
+func deathAnimation() -> void:
+	$AnimatedSprite.animation = "death"
+	$EnemyBody.disabled = true
+	$DeathTimer.start(0.25); yield($DeathTimer, "timeout")
+	self.queue_free()
