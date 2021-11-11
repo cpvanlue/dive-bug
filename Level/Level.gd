@@ -8,6 +8,7 @@ var difficultyIncreasing := true
 var spawnInterval := 2.0
 var minEnemySpeed := 200.0
 var maxEnemySpeed := 75.0
+var score := 0
 
 func _process(_delta: float) -> void:
 	difficultyIncrease()
@@ -28,7 +29,9 @@ func _on_KillZone_body_entered(body: Node) -> void:
 
 
 func _on_Enemy_Killed() -> void:
-	print("Score increased by 10.")
+	score += 100
+	# Update Score label in HUD once created
+	print(score)
 
 
 func _on_ReplayButton_pressed() -> void:
