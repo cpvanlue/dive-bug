@@ -30,8 +30,7 @@ func _on_KillZone_body_entered(body: Node) -> void:
 
 func _on_Enemy_Killed() -> void:
 	score += 100
-	# Update Score label in HUD once created
-	print(score)
+	$CanvasLayer/HUD/ScoreLabel.text = "%06d" % score
 
 
 func _on_ReplayButton_pressed() -> void:
