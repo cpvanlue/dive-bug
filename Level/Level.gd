@@ -11,6 +11,8 @@ var maxEnemySpeed := 75.0
 var score := 0
 
 func _process(_delta: float) -> void:
+	if $Player.position.y < 0:
+		$Player.position.y = 0
 	difficultyIncrease()
 	if spawning:
 		var enemy = preload("res://Enemy/Enemy.tscn").instance().init(enemyHealth, minEnemySpeed, maxEnemySpeed)
@@ -58,6 +60,8 @@ func _on_Player_player_death():
 	$Player.speed = 0
 	$Player.velocity = Vector2(0,0)
 	$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
+	set_process(false)
 	$Player.queue_free()
 	$CenteredCamera.current = true
 	$CanvasLayer/HUD/GameOver/Visibility.visible = true
+

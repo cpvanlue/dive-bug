@@ -1518,12 +1518,11 @@ shape = SubResource( 44 )
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="CenteredCamera" type="Camera2D" parent="."]
-anchor_mode = 0
 zoom = Vector2( 0.8, 0.8 )
 limit_left = 0
 limit_top = 0
-limit_right = 1100
-limit_bottom = 600
+limit_right = 1280
+limit_bottom = 720
 
 [connection signal="player_death" from="Player" to="." method="_on_Player_player_death"]
 [connection signal="body_entered" from="KillZone" to="." method="_on_KillZone_body_entered"]
