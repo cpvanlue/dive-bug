@@ -59,4 +59,5 @@ func _on_Player_player_death():
 	$Player.velocity = Vector2(0,0)
 	$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
 	$Player.queue_free()
-	$ReplayButton.visible = true
+	$CenteredCamera.current = true
+	$CanvasLayer/HUD/GameOver/Visibility.visible = true
