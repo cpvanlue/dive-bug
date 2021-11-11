@@ -1489,12 +1489,16 @@ drag_margin_v_enabled = true
 
 [node name="KillZone" type="Area2D" parent="."]
 position = Vector2( -4.49493, 31.4645 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2( 553.11, 732.446 )
 shape = SubResource( 42 )
 
 [node name="LEnemyKillZone" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LEnemyKillZone"]
 position = Vector2( -268.06, 441.733 )
@@ -1502,6 +1506,8 @@ shape = SubResource( 43 )
 
 [node name="REnemyKillZone" type="Area2D" parent="."]
 position = Vector2( 1574.38, 1147.75 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="REnemyKillZone"]
 position = Vector2( -319.03, -707.906 )
