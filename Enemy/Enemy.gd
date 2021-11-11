@@ -37,5 +37,6 @@ func _physics_process(delta: float) -> void:
 func deathAnimation() -> void:
 	$AnimatedSprite.animation = "death"
 	$EnemyBody.disabled = true
+	$DeathParticles.emitting = true
 	$DeathTimer.start(0.25); yield($DeathTimer, "timeout")
 	self.queue_free()

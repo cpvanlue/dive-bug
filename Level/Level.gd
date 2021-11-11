@@ -23,7 +23,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_KillZone_body_entered(body: Node) -> void:
-	print(str(body.name) + " has been eliminated via a kill zone.")
 	if (body.name == "Player"):
 		_on_Player_player_death()
 	else:
