@@ -3,8 +3,8 @@ extends KinematicBody2D
 
 export var speed := 150.0
 
-var minSpeed := 75.0
-var maxSpeed := 200.0
+var minSpeed
+var maxSpeed
 var health
 var velocity := Vector2.ZERO
 var height := rand_range(0, 640)
