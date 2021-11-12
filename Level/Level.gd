@@ -56,8 +56,8 @@ func spawnTimer() -> void:
 func difficultyIncrease() -> void:
 	if difficultyIncreasing:
 		difficultyIncreasing = false
-		minEnemySpeed += 10
-		maxEnemySpeed += 10
+		minEnemySpeed += 7
+		maxEnemySpeed += 7
 		spawnInterval = spawnInterval * 0.95
 		$DifficultyTimer.start(5); yield($DifficultyTimer, "timeout")
 		difficultyIncreasing = true
