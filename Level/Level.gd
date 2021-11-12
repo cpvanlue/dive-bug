@@ -6,8 +6,8 @@ export var enemyHealth := 1
 var spawning := true
 var difficultyIncreasing := true
 var spawnInterval := 5.0
-var minEnemySpeed := 200.0
-var maxEnemySpeed := 75.0
+var minEnemySpeed := 75.0
+var maxEnemySpeed := 150.0
 var score := 0
 
 func _process(_delta: float) -> void:
