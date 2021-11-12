@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Common/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=2]
@@ -12,6 +12,64 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "load"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 374.627, -0.25, 0, 0.25, 0, 433.36, -0.25, 0, 0.25, 0, 305.763, -0.25, 0, 0.25, 0, 374.021, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Label:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -147.628, -0.25, 0, 0.25, 0, -101.594, -0.25, 0, 0.25, 0, 76.7791, -0.25, 0, 0.25, 0, 221.233, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.6 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Label:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -12.0847, -0.25, 0, 0.25, 0, 6.6638, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.9, 1.6 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PlayButton:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -166.295, 455.306 ), Vector2( -63.1139, 444.194 ), Vector2( 24.1931, 412.446 ), Vector2( 86.1017, 352.125 ), Vector2( 146.423, 301.328 ), Vector2( 230.555, 337.838 ), Vector2( 308.338, 394.985 ), Vector2( 389.295, 456.893 ), Vector2( 457.553, 512.452 ), Vector2( 494.063, 482.292 ), Vector2( 532.161, 431.495 ), Vector2( 581.37, 372.761 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PlayButton:rect_rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -20.0575, -41.6872, -16.7432, 1.20926, 15.0635, 32.3582, 16.1069, -0.0927591, -13.3292, -13.3292, 0.0 ]
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -29,10 +87,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 378.158
-margin_top = 212.921
-margin_right = 919.158
-margin_bottom = 341.921
+margin_left = 374.021
+margin_top = 221.233
+margin_right = 915.021
+margin_bottom = 350.233
+rect_pivot_offset = Vector2( -113.553, -69.7693 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.215686, 0.65098, 1, 1 )
 text = "Dive Bug"
@@ -41,14 +100,19 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 582.958
-margin_top = 369.586
-margin_right = 718.958
-margin_bottom = 443.586
+margin_left = 581.37
+margin_top = 372.761
+margin_right = 717.37
+margin_bottom = 446.761
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "load"
+method_call_mode = 1
+anims/load = SubResource( 3 )
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
