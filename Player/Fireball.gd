@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 signal enemy_down
 
-
 var velocity := Vector2(0,0)
 
 
@@ -20,4 +19,3 @@ func _physics_process(delta: float) -> void:
 			emit_signal("enemy_down")
 			get_parent().get_node(collision.collider.name).health -= 1
 			self.queue_free()
-

@@ -10,6 +10,7 @@ var minEnemySpeed := 75.0
 var maxEnemySpeed := 150.0
 var score := 0
 
+
 func _process(_delta: float) -> void:
 	if $Player.position.y < 0:
 		$Player.position.y = 0
@@ -62,7 +63,7 @@ func difficultyIncrease() -> void:
 		difficultyIncreasing = true
 
 
-func _on_Player_player_death():
+func _on_Player_player_death() -> void:
 	$Player.gravity = 0
 	$Player.speed = 0
 	$Player.velocity = Vector2(0,0)
@@ -71,4 +72,3 @@ func _on_Player_player_death():
 	$Player.queue_free()
 	$CenteredCamera.current = true
 	$CanvasLayer/HUD/GameOver/Visibility.visible = true
-
