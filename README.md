@@ -8,6 +8,12 @@ To attack the fish that are coming toward you, use fireballs. Press Enter to sho
 
 
 ## Project Report
+I was quite excited for this iteration. After fixing some errors and misunderstandings in the first iteration, I was ready to tackle a major component of this game, which is also the primary objective: enemies. There was a lot that I wanted to implement in regards to enemies, such as multiple types, different speeds, and progressive difficulty. I found solutions to each of these problems and feel that I created a good set of enemies with their abilities. I also utilized layers and masks to help with the collision scheme that I wanted, and that is documented later on. That was a lot of fun to experiment with and figure out what worked just right.
+
+I was able to achieve everything that I wanted to for this iteration, which is encouraging. I felt that the enemy behavior would be one of the biggest parts of this game, but I seem to have made a manageable workload for myself. Essentially, I've established the core functionality of the game. For the next iteration, I'm going to add more flair, juice, and features to make the game feel more complete overall. I'm quite excited to see what the final product will look like.
+
+I feel that I put forth some great work this iteration. To be honest, I probably spent a bit too much time playing the game both as testing and just for fun. I love the concept I've come up with and really feel that this will be a great complete project. 
+
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
 - [X] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
 - [X] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
@@ -17,7 +23,7 @@ To attack the fish that are coming toward you, use fireballs. Press Enter to sho
 - [X] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
 - [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
 - [X] C-6: The release demonstrates the core gameplay loop: the player can take actions that move them toward a goal.
-- [ ] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
+- [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The game runs without errors or warnings.
 - [X] B-3: The source code and project structure comply with our adopted style guides.
 - [X] B-4: Clear progress has been made on the game with respect to the project plan.
@@ -39,7 +45,7 @@ To attack the fish that are coming toward you, use fireballs. Press Enter to sho
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
 
-I've earned a __ on this submission.
+I've earned an **A** on this submission.
 
 ## Layers and Masks
 I wanted the collision scheme to be quite specific between the Player, the Enemies, the fireballs, and the TileMap for the level. In short, I wanted the player to be able to collide with the level and enemies, but keep the enemies from colliding with the level and other enemies. I wanted the fireballs to have a similar collision setup to the player. To do this, I configured the layers and masks of each of these scenes to exist and detect collision on certain layers. 
