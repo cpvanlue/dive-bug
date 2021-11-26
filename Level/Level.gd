@@ -20,11 +20,11 @@ func _process(_delta: float) -> void:
 		var enemy2 = preload("res://Enemy/Enemy.tscn").instance().init(enemyHealth, minEnemySpeed, maxEnemySpeed)
 		var secondaryEnemy = preload("res://Enemy/SecondaryEnemy.tscn").instance().init(enemyHealth * 2, minEnemySpeed / 2, maxEnemySpeed / 2)
 		if !enemy.dir:
-			enemy.get_child(1).flip_h = true
+			enemy.get_node("AnimatedSprite").flip_h = true
 		if !enemy2.dir:
-			enemy2.get_child(1).flip_h = true
+			enemy2.get_node("AnimatedSprite").flip_h = true
 		if !secondaryEnemy.dir:
-			secondaryEnemy.get_child(1).flip_h = true
+			secondaryEnemy.get_node("AnimatedSprite").flip_h = true
 		add_child_below_node($TileMap, enemy)
 		add_child_below_node($TileMap, enemy2)
 		add_child_below_node($TileMap, secondaryEnemy)
