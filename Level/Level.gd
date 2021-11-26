@@ -16,9 +16,9 @@ func _process(_delta: float) -> void:
 		$Player.position.y = 0
 	difficultyIncrease()
 	if spawning:
-		var enemy = preload("res://Enemy/Enemy.tscn").instance().init(enemyHealth, minEnemySpeed, maxEnemySpeed)
-		var enemy2 = preload("res://Enemy/Enemy.tscn").instance().init(enemyHealth, minEnemySpeed, maxEnemySpeed)
-		var secondaryEnemy = preload("res://Enemy/SecondaryEnemy.tscn").instance().init(enemyHealth * 2, minEnemySpeed / 2, maxEnemySpeed / 2)
+		var enemy = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed)
+		var enemy2 = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed)
+		var secondaryEnemy = preload("res://Enemy/RedEnemy.tscn").instance().initialize(enemyHealth * 2, minEnemySpeed / 2, maxEnemySpeed / 2)
 		if !enemy.dir:
 			enemy.get_node("AnimatedSprite").flip_h = true
 		if !enemy2.dir:

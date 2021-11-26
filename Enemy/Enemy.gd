@@ -3,14 +3,23 @@ extends KinematicBody2D
 
 export var speed := 150.0
 
-var minSpeed
-var maxSpeed
-var health
+var minSpeed := 0
+var maxSpeed := 0
+var health := 0
 var velocity := Vector2.ZERO
 var height := rand_range(0, 640)
 var dir := true
 
-func init(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
+
+func _physics_process(delta: float) -> void:
+	if health == 0:
+		deathAnimation()
+		set_physics_process(false)
+	else:
+		var _collision = move_and_collide(velocity * delta)
+
+
+func initialize(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
 	health = parameterHealth
 	minSpeed = minimumSpeed
 	maxSpeed = maximumSpeed
@@ -25,13 +34,6 @@ func init(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> Kin
 		position = Vector2(1100, height)
 	return self
 
-
-func _physics_process(delta: float) -> void:
-	if health == 0:
-		deathAnimation()
-		set_physics_process(false)
-	else:
-		var _collision = move_and_collide(velocity * delta)
 
 
 func deathAnimation() -> void:
