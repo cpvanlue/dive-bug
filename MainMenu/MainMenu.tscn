@@ -87,10 +87,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 374.021
-margin_top = 221.233
-margin_right = 915.021
-margin_bottom = 350.233
+margin_left = 374.627
+margin_top = -147.628
+margin_right = 915.627
+margin_bottom = -18.628
 rect_pivot_offset = Vector2( -113.553, -69.7693 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.215686, 0.65098, 1, 1 )
@@ -100,10 +100,10 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 581.37
-margin_top = 372.761
-margin_right = 717.37
-margin_bottom = 446.761
+margin_left = -166.295
+margin_top = 455.306
+margin_right = -30.295
+margin_bottom = 529.306
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {

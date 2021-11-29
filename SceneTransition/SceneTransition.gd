@@ -9,4 +9,5 @@ func change_scene(path: String) -> void:
 	yield(animation_player, "animation_finished")
 	var _ignored = get_tree().change_scene(path)
 	animation_player.play_backwards("Fade")
+	yield(animation_player, "animation_finished")
 	$Control.visible = false
