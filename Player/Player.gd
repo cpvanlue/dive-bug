@@ -28,10 +28,8 @@ func _physics_process(delta: float) -> void:
 	var _velocity = move_and_slide(velocity, Vector2(0, -1))
 	for i in get_slide_count():
 		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
-			print("I have collided with an enemy. Immune for 3 seconds.")
 			_immunityTimer()
 			health -= 1
-			print(health)
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
