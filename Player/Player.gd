@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
 			_immunityTimer()
 			health -= 1
+			self.get_parent().get_node("Player/Camera2D").shake(300)
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
