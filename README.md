@@ -37,7 +37,7 @@ I feel that I put forth some great work this iteration. To be honest, I probably
 - [X] ⭐ Incorporate smooth transitions between title, game, and end states, rather than jumping between states via <code>change_scene</code>
 - [ ] ⭐ Support two of the following: touch input, mouse/keyboard input, and gamepad input
 - [ ] ⭐ Allow the user to control the volume of music and sound effects independently.
-- [ ] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
+- [X] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
 - [X] ⭐ Use particle effects
 - [X] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
 - [X] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
@@ -51,6 +51,9 @@ I've earned an **A** on this submission.
 I wanted the collision scheme to be quite specific between the Player, the Enemies, the fireballs, and the TileMap for the level. In short, I wanted the player to be able to collide with the level and enemies, but keep the enemies from colliding with the level and other enemies. I wanted the fireballs to have a similar collision setup to the player. To do this, I configured the layers and masks of each of these scenes to exist and detect collision on certain layers. 
 
 I began with the TileMap for the level, and figured it would be best for it to exist on layer 1, since it was the first scene I was configuring. Since the TileMap doesn't really detect collision, there was no need to set the mask. Next, I moved on to the Enemy scene. I didn't want there to be any collision whatsoever between the enemies and the level, so I started by setting the layer to 2. I removed all mask layers, since the Enemy scene isn't responsible for detecting collision with other bodies. Finally, I moved on to the Player and Fireball scenes. I knew that the Player needed to collide with both the Level and Enemy scenes, so I set the mask to layers 1 and 2. I knew that this was also the case for the Fireball scene, so I repeated the process with that scene. This resulted in the collision scheme that I required, so I was satisfied and grateful for the layers and masks features in Godot. 
+
+## Juice
+One of the biggest elements of juice incorporated in this game so far is the screen shake when colliding with enemies. This is a practice that we discussed earlier in the semester, and I feel that it adds a lot of value to the game for the player. When playing on a PC, most mice don't vibrate like controllers do. A screen shake, to me, feels almost like a visual vibration, and produces the same effect of impact that I was trying to accomplish. I spent quite some time researching the best way to implement a screen shake in Godot, and I think this particular algorithm looks great.
 
 ## Third-Party Assets
 All assets, except font, are licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). 
