@@ -10,27 +10,37 @@
 [node name="SoundPlayer" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="PlayerSwim" type="AudioStreamPlayer2D" parent="."]
+[node name="PlayerSwim" type="AudioStreamPlayer2D" parent="." groups=[
+"SoundEffects",
+]]
 stream = ExtResource( 1 )
 volume_db = -20.0
 max_distance = 3000.0
 
-[node name="EnemyDamaged" type="AudioStreamPlayer2D" parent="."]
+[node name="EnemyDamaged" type="AudioStreamPlayer2D" parent="." groups=[
+"SoundEffects",
+]]
 stream = ExtResource( 2 )
 volume_db = -10.0
 
-[node name="PlayerDamaged" type="AudioStreamPlayer2D" parent="."]
+[node name="PlayerDamaged" type="AudioStreamPlayer2D" parent="." groups=[
+"SoundEffects",
+]]
 stream = ExtResource( 3 )
 volume_db = -15.0
 pitch_scale = 0.9
 
-[node name="MainMenuTheme" type="AudioStreamPlayer2D" parent="."]
+[node name="MainMenuTheme" type="AudioStreamPlayer2D" parent="." groups=[
+"Music",
+]]
 stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="Tween" type="Tween" parent="MainMenuTheme"]
 
-[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="." groups=[
+"Music",
+]]
 stream = ExtResource( 6 )
 volume_db = -10.0
 
