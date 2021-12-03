@@ -72,6 +72,7 @@ func _set_direction() -> void:
 
 func _check_abilities(delta: float) -> void:
 	if Input.is_action_just_pressed("swim"):
+		SoundPlayer.get_node("PlayerSwim").play()
 		$Animations/AnimatedSprite.frame = 0
 		if !immunity:
 			$Animations/AnimatedSprite.play("swim")
