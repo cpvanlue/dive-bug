@@ -17,5 +17,6 @@ func _physics_process(delta: float) -> void:
 			self.queue_free()
 		elif ("Enemy" in collision.collider.name):
 			emit_signal("enemy_down")
+			SoundPlayer.get_node("EnemyImpact").play()
 			get_parent().get_node(collision.collider.name).health -= 1
 			self.queue_free()
