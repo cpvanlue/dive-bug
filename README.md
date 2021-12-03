@@ -63,3 +63,11 @@ Copyright 2018 The ZCOOL KuaiLe Project Authors (https://www.github.com/googlefo
 
 ### Images:
 Artwork assets are from [Platformer Art Deluxe](https://kenney.nl/assets/platformer-art-deluxe), [Kenney's Fish Pack](https://kenney.nl/assets/fish-pack), and [Background Elements Redux](https://kenney.nl/assets/background-elements-redux). Created in 2016 by Kenney.nl.
+
+### Sounds
+All sounds are retrieved from [freesound.org](freesound.org) and are licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). 
+- [swim.wav](https://freesound.org/people/jeckkech/sounds/391666/) by [jeckkech](https://freesound.org/people/jeckkech/)
+- [Water_Paddle_impact_001.wav](https://freesound.org/people/EpicWizard/sounds/316572/) by [EpicWizard](https://freesound.org/people/EpicWizard/)
+- [Retro Video Game 'Damaged' Effect](https://freesound.org/people/SRJA_Gaming/sounds/544887/) by [SRJA_Gaming](https://freesound.org/people/SRJA_Gaming/)
+- [Playground Runaround](https://freesound.org/people/shortiefoeva2/sounds/405220/) by [shortiefoeva2](https://freesound.org/people/shortiefoeva2/)
+- [Bơi Xuyên San Hô](https://freesound.org/people/SieuAmThanh/sounds/431801/) by [SieuAmThanh](https://freesound.org/people/SieuAmThanh/)
