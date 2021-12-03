@@ -20,6 +20,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if health == 0:
 		emit_signal("player_death")
+		set_physics_process(false)
 	velocity.y = clamp(velocity.y, -250, 150)
 	_set_direction()
 	_check_abilities(delta)
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	var _velocity = move_and_slide(velocity, Vector2(0, -1))
 	for i in get_slide_count():
 		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
+			SoundPlayer.get_node("PlayerDamaged").play()
 			_immunityTimer()
 			health -= 1
 			self.get_parent().get_node("Player/Camera2D").shake(375)
