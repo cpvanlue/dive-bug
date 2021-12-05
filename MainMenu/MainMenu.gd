@@ -15,7 +15,7 @@ func _on_PlayButton_pressed() -> void:
 
 
 func _on_TextureButton_pressed():
-	$Settings/CanvasLayer/Control.visible = true
+	$AnimationPlayer.play("settings")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String):
