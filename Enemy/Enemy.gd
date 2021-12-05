@@ -35,7 +35,6 @@ func initialize(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) 
 	return self
 
 
-
 func deathAnimation() -> void:
 	$AnimatedSprite.animation = "death"
 	$EnemyBody.disabled = true

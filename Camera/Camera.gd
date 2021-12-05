@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	offset = Vector2(rand_range(-shakeIntensity, shakeIntensity), rand_range(-shakeIntensity, shakeIntensity)) * delta + default_offset
 
 
-func shake(intensity: float, duration := 0.3, limit = 500) -> void:
+func shake(intensity: float, duration := 0.3, limit := 500) -> void:
 	shakeIntensity += intensity
 	if shakeIntensity > limit:
 		shakeIntensity = limit

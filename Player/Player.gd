@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	var _velocity = move_and_slide(velocity, Vector2(0, -1))
 	for i in get_slide_count():
 		if "Enemy" in get_slide_collision(i).collider.name and !immunity:
+			_reduceHealth()
 			SoundPlayer.get_node("PlayerDamaged").play()
 			_immunityTimer()
 			health -= 1
@@ -36,6 +37,14 @@ func _physics_process(delta: float) -> void:
 	if velocity.y > gravity:
 		velocity.y = gravity
 	velocity.x = lerp(velocity.x, 0, 0.25)
+
+
+func _reduceHealth() -> void:
+	var hud = get_parent().get_node("CanvasLayer/HUD")
+	var rightMostHeart = hud.get_child(hud.get_child_count()-1)
+	rightMostHeart.get_node("AnimatedSprite").animation = "lost"
+	rightMostHeart.get_node("HealthLostTimer").start(1); yield(rightMostHeart.get_node("HealthLostTimer"), "timeout")
+	rightMostHeart.queue_free()
 
 
 func _immunityTimer() -> void:

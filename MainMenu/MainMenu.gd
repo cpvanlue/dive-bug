@@ -18,6 +18,6 @@ func _on_TextureButton_pressed():
 	$Settings/CanvasLayer/Control.visible = true
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(anim_name: String):
 	if anim_name == "load":
 		$SettingsButton.visible = true

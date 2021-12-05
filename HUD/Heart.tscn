@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HUD/hudHeart_full.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "remaining",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ), null ],
+"loop": true,
+"name": "lost",
+"speed": 8.0
+} ]
+
+[node name="Heart" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+animation = "remaining"
+playing = true
+
+[node name="HealthLostTimer" type="Timer" parent="."]
