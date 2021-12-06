@@ -51,6 +51,14 @@ func _on_ReplayButton_pressed() -> void:
 	var _returnValue = get_tree().change_scene("MainMenu/MainMenu.tscn")
 
 
+func _on_Player_player_death() -> void:
+	$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
+	set_process(false)
+	$Player.queue_free()
+	$CenteredCamera.current = true
+	$CanvasLayer/HUD/GameOver/Visibility.visible = true
+
+
 func spawnTimer() -> void:
 	spawning = false
 	$EnemySpawnTimer.start(spawnInterval); yield($EnemySpawnTimer, "timeout")
@@ -67,9 +75,7 @@ func difficultyIncrease() -> void:
 		difficultyIncreasing = true
 
 
-func _on_Player_player_death() -> void:
-	$Player/Animations/AnimationPlayer.play("death"); yield($Player/Animations/AnimationPlayer, "animation_finished")
-	set_process(false)
-	$Player.queue_free()
-	$CenteredCamera.current = true
-	$CanvasLayer/HUD/GameOver/Visibility.visible = true
+func initialize(interval: float, minSpeed: float, maxSpeed: float) -> void:
+	self.spawnInterval = interval
+	self.minEnemySpeed = minSpeed
+	self.maxEnemySpeed = maxSpeed
