@@ -24,6 +24,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "settings"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:offset")
 tracks/0/interp = 1
