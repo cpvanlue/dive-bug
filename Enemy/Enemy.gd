@@ -5,7 +5,7 @@ export var speed := 150.0
 
 var minSpeed := 0.0
 var maxSpeed := 0.0
-var health := 0
+var health := 0.0
 var velocity := Vector2.ZERO
 var height := rand_range(0, 640)
 var dir := true
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		var _collision = move_and_collide(velocity * delta)
 
 
-func initialize(parameterHealth: int, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
+func initialize(parameterHealth: float, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
 	health = parameterHealth
 	minSpeed = minimumSpeed
 	maxSpeed = maximumSpeed

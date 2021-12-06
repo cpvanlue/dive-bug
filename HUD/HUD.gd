@@ -5,7 +5,7 @@ onready var mainMenuTheme := SoundPlayer.get_node("MainMenuTheme")
 onready var levelTheme := SoundPlayer.get_node("LevelMusic")
 
 
-func _ready() -> void:
+func initialize() -> void:
 	var x = 50
 	for _i in range(self.get_parent().get_parent().get_node("Player").health):
 		var heart = preload("res://HUD/Heart.tscn").instance()

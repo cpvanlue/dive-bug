@@ -7,14 +7,10 @@ export var swim_impulse := -400
 export var speed := 200
 export var gravity := 150
 
-var health
+var health := 0
 var lethal := true
 var immunity := false
 var velocity := Vector2(0, 0)
-
-
-func _ready() -> void:
-	health = 3
 
 
 func _physics_process(delta: float) -> void:
@@ -127,3 +123,7 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		or $Animations/AnimatedSprite.animation == "swim"):
 			if !immunity:
 				$Animations/AnimatedSprite.play("idle")
+
+
+func set_health(value: int) -> void:
+	health = value
