@@ -3,10 +3,10 @@ extends CanvasLayer
 
 signal change_music
 
+
 func _on_EasyButton_pressed() -> void:
 	SceneTransition.change_scene("Level/EasyLevel.tscn")
 	emit_signal("change_music")
-	
 
 
 func _on_TextureButton_pressed() -> void:

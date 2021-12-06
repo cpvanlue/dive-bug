@@ -11,7 +11,7 @@ var maxEnemySpeed := 150.0
 var score := 0
 
 
-func _ready():
+func _ready()  -> void:
 	if self.name == "EasyLevel":
 		initialize(5.0, 75.0, 150.0, 1.0, 3)
 	elif self.name == "MediumLevel":

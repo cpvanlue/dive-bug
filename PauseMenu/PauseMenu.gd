@@ -7,10 +7,10 @@ func _on_Resume_pressed() -> void:
 	get_parent().get_tree().paused = false
 
 
-func _on_Quit_pressed():
+func _on_Quit_pressed() -> void:
 	get_parent().get_tree().paused = false
 	SceneTransition.change_scene("MainMenu/MainMenu.tscn")
 
 
-func _on_SettingsButton_pressed():
+func _on_SettingsButton_pressed() -> void:
 	$Settings/AnimationPlayer.play("settings")
