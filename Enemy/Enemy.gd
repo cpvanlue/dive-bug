@@ -12,7 +12,7 @@ var dir := true
 
 
 func _physics_process(delta: float) -> void:
-	if health == 0:
+	if health <= 0:
 		deathAnimation()
 		set_physics_process(false)
 	else:

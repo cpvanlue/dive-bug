@@ -75,7 +75,8 @@ func difficultyIncrease() -> void:
 		difficultyIncreasing = true
 
 
-func initialize(interval: float, minSpeed: float, maxSpeed: float) -> void:
+func initialize(interval: float, minSpeed: float, maxSpeed: float, health: int) -> void:
 	self.spawnInterval = interval
 	self.minEnemySpeed = minSpeed
 	self.maxEnemySpeed = maxSpeed
+	self.enemyHealth = health
