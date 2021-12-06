@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Common/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://MainMenu/gear.png" type="Texture" id=3]
+[ext_resource path="res://Common/gear.png" type="Texture" id=3]
 [ext_resource path="res://Settings/Settings.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -73,22 +73,6 @@ tracks/4/keys = {
 "values": [ 0.0, -20.0575, -41.6872, -16.7432, 1.20926, 15.0635, 32.3582, 16.1069, -0.0927591, -13.3292, -13.3292, 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "settings"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Settings:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -1280, 0 ), Vector2( 0, 0 ), Vector2( -640, 0 ), Vector2( 0, 0 ) ]
-}
-
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -105,10 +89,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 374.627
-margin_top = -147.628
-margin_right = 915.627
-margin_bottom = -18.628
+margin_left = 403.993
+margin_top = -124.611
+margin_right = 944.993
+margin_bottom = 4.38899
+rect_rotation = -6.04235
 rect_pivot_offset = Vector2( -113.553, -69.7693 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.215686, 0.65098, 1, 1 )
@@ -118,10 +103,11 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = -166.295
-margin_top = 455.306
-margin_right = -30.295
-margin_bottom = 529.306
+margin_left = 24.1931
+margin_top = 412.446
+margin_right = 160.193
+margin_bottom = 486.446
+rect_rotation = -41.6872
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
@@ -132,7 +118,6 @@ __meta__ = {
 autoplay = "load"
 method_call_mode = 1
 anims/load = SubResource( 3 )
-anims/settings = SubResource( 4 )
 
 [node name="Settings" parent="." instance=ExtResource( 4 )]
 offset = Vector2( -1280, 0 )

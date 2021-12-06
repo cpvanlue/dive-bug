@@ -15,7 +15,7 @@ func _on_PlayButton_pressed() -> void:
 
 
 func _on_TextureButton_pressed():
-	$AnimationPlayer.play("settings")
+	$Settings/AnimationPlayer.play("settings")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String):

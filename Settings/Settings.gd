@@ -17,4 +17,4 @@ func _on_SFXSlider_value_changed(value: float) -> void:
 
 
 func _on_BackButton_pressed() -> void:
-	get_parent().get_node("AnimationPlayer").play_backwards("settings")
+	$AnimationPlayer.play_backwards("settings")

@@ -29,6 +29,10 @@ func _process(_delta: float) -> void:
 		add_child_below_node($TileMap, enemy2)
 		add_child_below_node($TileMap, secondaryEnemy)
 		spawnTimer()
+	if Input.is_action_just_pressed("pause"):
+		$PauseMenu/AnimationPlayer.play("pause")
+		$PauseMenu/Resume.disabled = false
+		get_tree().paused = true
 
 
 func _on_KillZone_body_entered(body: Node) -> void:
