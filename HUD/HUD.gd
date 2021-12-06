@@ -15,7 +15,8 @@ func initialize() -> void:
 
 
 func _on_MainMenuButton_pressed() -> void:
-	var _ignored = SceneTransition.change_scene("res://MainMenu/MainMenu.tscn")
 	var volume = levelTheme.volume_db
 	SoundPlayer.fade(mainMenuTheme.get_node("Tween"), mainMenuTheme, -80, volume, Tween.EASE_OUT, false, true)
 	SoundPlayer.fade(levelTheme.get_node("Tween"), levelTheme, volume, -80, Tween.EASE_IN, true, false)
+	var _ignored = SceneTransition.change_scene("res://MainMenu/MainMenu.tscn")
+	

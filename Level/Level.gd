@@ -9,15 +9,17 @@ var spawnInterval := 5.0
 var minEnemySpeed := 75.0
 var maxEnemySpeed := 150.0
 var score := 0
+var leftXSpawn
+var rightXSpawn
 
 
 func _ready()  -> void:
 	if self.name == "EasyLevel":
-		initialize(5.0, 75.0, 150.0, 1.0, 3)
+		initialize(5.0, 75.0, 150.0, 1.0, 3, -100, 1100)
 	elif self.name == "MediumLevel":
-		initialize(4.0, 90.0, 160.0, 1.5, 4)
+		initialize(4.0, 90.0, 160.0, 1.5, 4, -300, 1300)
 	elif self.name == "HardLevel":
-		initialize(3.5, 100.0, 180.0, 2.0, 5)
+		initialize(3.5, 100.0, 180.0, 2.0, 5, -400, 1400)
 	$CanvasLayer/HUD.initialize()
 
 
@@ -26,9 +28,9 @@ func _process(_delta: float) -> void:
 		$Player.position.y = 0
 	difficultyIncrease()
 	if spawning:
-		var enemy = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed)
-		var enemy2 = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed)
-		var secondaryEnemy = preload("res://Enemy/RedEnemy.tscn").instance().initialize(enemyHealth * 2.0, minEnemySpeed / 2.0, maxEnemySpeed / 2.0)
+		var enemy = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed, leftXSpawn, rightXSpawn)
+		var enemy2 = preload("res://Enemy/BlueEnemy.tscn").instance().initialize(enemyHealth, minEnemySpeed, maxEnemySpeed, leftXSpawn, rightXSpawn)
+		var secondaryEnemy = preload("res://Enemy/RedEnemy.tscn").instance().initialize(enemyHealth * 2.0, minEnemySpeed / 2.0, maxEnemySpeed / 2.0, leftXSpawn, rightXSpawn)
 		if !enemy.dir:
 			enemy.get_node("AnimatedSprite").flip_h = true
 		if !enemy2.dir:
@@ -85,10 +87,12 @@ func difficultyIncrease() -> void:
 		difficultyIncreasing = true
 
 
-func initialize(interval: float, minSpeed: float, maxSpeed: float, enemyhealth: float, playerHealth: int) -> void:
-	self.spawnInterval = interval
-	self.minEnemySpeed = minSpeed
-	self.maxEnemySpeed = maxSpeed
-	self.enemyHealth = enemyhealth
+func initialize(interval: float, minSpeed: float, maxSpeed: float, enemyhealth: float, playerHealth: int, leftSpawn: int, rightSpawn: int) -> void:
+	spawnInterval = interval
+	minEnemySpeed = minSpeed
+	maxEnemySpeed = maxSpeed
+	enemyHealth = enemyhealth
+	leftXSpawn = leftSpawn
+	rightXSpawn = rightSpawn
 	$Player.set_health(playerHealth)
 

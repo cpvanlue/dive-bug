@@ -5,7 +5,7 @@ func fade(tweenNode: Tween, sound: AudioStreamPlayer2D, startdB: int, enddB: int
 		  easeType, stopValue: bool, startValue: bool) -> void:
 	if startValue:
 		sound.play()
-	## These returned values are unused booleans and unimportant; removed in future version of GDScript
+	## These returned values are unused booleans; removed in future version of GDScript
 	var _returnValue = tweenNode.interpolate_property(sound, 
 		"volume_db", startdB, enddB, 1, 1, easeType, 0)
 	var _returnBool = tweenNode.start()

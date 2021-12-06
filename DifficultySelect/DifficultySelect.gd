@@ -13,3 +13,8 @@ func _on_TextureButton_pressed() -> void:
 	$AnimationPlayer.play_backwards("slide")
 	for button in get_tree().get_nodes_in_group("buttons"):
 		button.disabled = true
+
+
+func _on_MediumButton_pressed():
+	SceneTransition.change_scene("Level/MediumLevel.tscn")
+	emit_signal("change_music")

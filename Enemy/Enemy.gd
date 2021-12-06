@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		var _collision = move_and_collide(velocity * delta)
 
 
-func initialize(parameterHealth: float, minimumSpeed: float, maximumSpeed: float) -> KinematicBody2D:
+func initialize(parameterHealth: float, minimumSpeed: float, maximumSpeed: float, leftXSpawn: int, rightXSpawn: int) -> KinematicBody2D:
 	health = parameterHealth
 	minSpeed = minimumSpeed
 	maxSpeed = maximumSpeed
@@ -28,10 +28,10 @@ func initialize(parameterHealth: float, minimumSpeed: float, maximumSpeed: float
 		dir = false
 	if dir:
 		velocity.x = speed
-		position = Vector2(-100, height)
+		position = Vector2(leftXSpawn, height)
 	else:
 		velocity.x = -speed
-		position = Vector2(1100, height)
+		position = Vector2(rightXSpawn, height)
 	return self
 
 
