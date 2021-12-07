@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="CS315Final"
+config/name="Dive Bug"
 run/main_scene="res://MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
@@ -25,6 +25,13 @@ window/size/width=1280
 window/size/height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"flags/filter": false,
+"process/fix_alpha_border": false
+}
 
 [input]
 
