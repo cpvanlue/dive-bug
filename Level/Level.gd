@@ -5,9 +5,9 @@ export var enemyHealth := 1.0
 
 var spawning := true
 var difficultyIncreasing := true
-var spawnInterval := 5.0
-var minEnemySpeed := 75.0
-var maxEnemySpeed := 150.0
+var spawnInterval
+var minEnemySpeed
+var maxEnemySpeed
 var score := 0
 var leftXSpawn
 var rightXSpawn
