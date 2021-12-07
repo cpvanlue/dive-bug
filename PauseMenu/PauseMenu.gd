@@ -4,6 +4,7 @@ extends CanvasLayer
 onready var mainMenuTheme := SoundPlayer.get_node("MainMenuTheme")
 onready var levelMusic := SoundPlayer.get_node("LevelMusic")
 
+
 func _on_Resume_pressed() -> void:
 	$AnimationPlayer.play_backwards("pause"); yield($AnimationPlayer, "animation_finished")
 	$Resume.disabled = true

@@ -15,7 +15,7 @@ script = ExtResource( 5 )
 "SoundEffects",
 ]]
 stream = ExtResource( 1 )
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="EnemyDamaged" type="AudioStreamPlayer" parent="." groups=[
 "SoundEffects",
@@ -27,7 +27,7 @@ volume_db = -10.0
 "SoundEffects",
 ]]
 stream = ExtResource( 3 )
-volume_db = -15.0
+volume_db = -10.0
 pitch_scale = 0.9
 
 [node name="MainMenuTheme" type="AudioStreamPlayer" parent="." groups=[

@@ -115,11 +115,12 @@ rect_scale = Vector2( 2, 2 )
 hint_tooltip = "Music Volume"
 min_value = -80.0
 max_value = -10.0
-step = 3.0
-value = -12.0
+step = 10.0
+value = -10.0
 rounded = true
 scrollable = false
-tick_count = 10
+tick_count = 8
+ticks_on_borders = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,14 +131,15 @@ margin_top = 400.0
 margin_right = 640.0
 margin_bottom = 425.0
 rect_scale = Vector2( 2, 2 )
-hint_tooltip = "Music Volume"
+hint_tooltip = "SFX Volume"
 min_value = -80.0
 max_value = -10.0
-step = 3.0
-value = -12.0
+step = 10.0
+value = -10.0
 rounded = true
 scrollable = false
-tick_count = 10
+tick_count = 8
+ticks_on_borders = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
