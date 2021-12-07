@@ -19,7 +19,7 @@ func _ready()  -> void:
 	elif self.name == "MediumLevel":
 		initialize(4.0, 90.0, 160.0, 1.5, 4, -300, 1300)
 	elif self.name == "HardLevel":
-		initialize(3.5, 100.0, 180.0, 2.0, 5, -400, 1400)
+		initialize(3.5, 100.0, 180.0, 2.0, 5, -370, 1300)
 	$CanvasLayer/HUD.initialize()
 
 

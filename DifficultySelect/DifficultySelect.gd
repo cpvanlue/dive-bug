@@ -18,3 +18,8 @@ func _on_TextureButton_pressed() -> void:
 func _on_MediumButton_pressed():
 	SceneTransition.change_scene("Level/MediumLevel.tscn")
 	emit_signal("change_music")
+
+
+func _on_HardButton_pressed():
+	SceneTransition.change_scene("Level/HardLevel.tscn")
+	emit_signal("change_music")
