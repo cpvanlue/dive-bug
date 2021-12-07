@@ -73,6 +73,26 @@ tracks/4/keys = {
 "update": 0,
 "values": [ 0.0, -20.0575, -41.6872, -16.7432, 1.20926, 15.0635, 32.3582, 16.1069, -0.0927591, -13.3292, -13.3292, 0.0 ]
 }
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("SettingsButton:rect_position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 20, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1.4 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("SettingsButton:rect_position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( -100, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1.4 )
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -90,11 +110,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = 403.993
-margin_top = -124.611
-margin_right = 944.993
-margin_bottom = 4.38899
-rect_rotation = -6.04235
+margin_left = 361.016
+margin_top = 193.71
+margin_right = 902.016
+margin_bottom = 322.71
+rect_rotation = 1.26968
 rect_pivot_offset = Vector2( -113.553, -69.7693 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.215686, 0.65098, 1, 1 )
@@ -104,11 +124,11 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 24.1931
-margin_top = 412.446
-margin_right = 160.193
-margin_bottom = 486.446
-rect_rotation = -41.6872
+margin_left = 559.147
+margin_top = 398.953
+margin_right = 695.146
+margin_bottom = 472.953
+rect_rotation = -6.6646
 custom_fonts/font = SubResource( 2 )
 text = "Play"
 __meta__ = {
@@ -121,11 +141,8 @@ method_call_mode = 1
 anims/load = SubResource( 3 )
 
 [node name="Settings" parent="." instance=ExtResource( 4 )]
-offset = Vector2( -1280, 0 )
-transform = Transform2D( 1, 0, 0, 1, -1280, 0 )
 
 [node name="SettingsButton" type="TextureButton" parent="."]
-visible = false
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 70.0

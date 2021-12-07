@@ -19,11 +19,6 @@ func _on_TextureButton_pressed() -> void:
 	$Settings/AnimationPlayer.play("settings")
 
 
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	if anim_name == "load":
-		$SettingsButton.visible = true
-
-
 func _on_DifficultySelect_change_music() -> void:
 	var volume = mainMenuTheme.volume_db
 	SoundPlayer.fade(mainMenuTheme.get_node("Tween"), mainMenuTheme, mainMenuTheme.volume_db, -80, Tween.EASE_IN, true, false)
