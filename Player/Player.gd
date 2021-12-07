@@ -14,7 +14,7 @@ var velocity := Vector2(0, 0)
 
 
 func _physics_process(delta: float) -> void:
-	if health == 0:
+	if health <= 0:
 		emit_signal("player_death")
 		set_physics_process(false)
 	velocity.y = clamp(velocity.y, -250, 150)

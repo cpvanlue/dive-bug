@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 
-func _ready():
+func _ready() -> void:
 	$Control/MusicSlider.value = SoundPlayer.musicVolume
 	$Control/SFXSlider.value = SoundPlayer.sfxVolume
+
 
 func _on_MusicSlider_value_changed(value: float) -> void:
 	for node in get_tree().get_nodes_in_group("Music"):

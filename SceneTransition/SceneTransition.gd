@@ -3,6 +3,7 @@ extends CanvasLayer
 
 onready var animation_player := $AnimationPlayer
 
+
 func change_scene(path: String) -> void:
 	$Control.visible = true
 	animation_player.play("Fade")
