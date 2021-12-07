@@ -21,7 +21,7 @@ There are three difficulty settings that this game can be played at. Each diffic
 - Player Health: 5
 - Blue Enemy Health: 2
 - Red Enemy Health: 4
-- Enemy speed is initialiezd at a slightly higher range than Medium, and still increases with time. 
+- Enemy speed is initialized at a slightly higher range than Medium, and still increases with time. 
   
 Each enemy collision with a fireball reduces their health by 1, and once their health reaches 0, they will be eliminated. If enemies collide with the player a number of times greater than the player's health, then the player will be eliminated. The player can also be eliminated by sinking too deep. To pause the game, press Escape at any time while in the game. Sound settings can be adjusted here as well as the main menu. See how long you can survive!
 
