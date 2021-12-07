@@ -74,7 +74,7 @@ All assets, except font, are licensed under [CC0 1.0 Universal](https://creative
 Copyright 2018 The ZCOOL KuaiLe Project Authors (https://www.github.com/googlefonts/zcool-kuaile). This Font Software is licensed under the SIL Open Font License, Version 1.1.
 
 ### Images:
-Artwork assets are from [Platformer Art Deluxe](https://kenney.nl/assets/platformer-art-deluxe), [Kenney's Fish Pack](https://kenney.nl/assets/fish-pack), and [Background Elements Redux](https://kenney.nl/assets/background-elements-redux). Created in 2016 by Kenney.nl.
+Artwork assets are from [Platformer Art Deluxe](https://kenney.nl/assets/platformer-art-deluxe), [Game Icons](https://kenney.nl/assets/game-icons), [Kenney's Fish Pack](https://kenney.nl/assets/fish-pack), and [Background Elements Redux](https://kenney.nl/assets/background-elements-redux). Created in 2016 by Kenney.nl.
 
 ### Sounds
 All sounds are retrieved from [freesound.org](freesound.org) and are licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/). 
