@@ -1471,7 +1471,7 @@ margin_left = -1105.0
 margin_right = 817.0
 margin_bottom = 720.0
 rect_scale = Vector2( 2, 1 )
-color = Color( 0.0980392, 0.227451, 0.341176, 0.592157 )
+color = Color( 0.0980392, 0.227451, 0.341176, 0.313726 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
