@@ -26,6 +26,8 @@ There are three difficulty settings that this game can be played at. Each diffic
 Each enemy collision with a fireball reduces their health by 1, and once their health reaches 0, they will be eliminated. If enemies collide with the player a number of times greater than the player's health, then the player will be eliminated. The player can also be eliminated by sinking too deep. To pause the game, press Escape at any time while in the game. Sound settings can be adjusted here as well as the main menu. See how long you can survive!
 
 ## Project Report
+I was able to implement a lot of functionality and polish into this iteration. I may have given myself a lot of work to do, but I feel that I handled it well and put forth a great project. I found it interesting that it seemed easier to find areas to polish after implementing the core functionality. In a lot of my work, I try to be as thorough as possible to avoid wasting time revisiting things that should already be completed. However, there are things in this project that I didn't realize that I wanted to change until other features had been implemented. For example, I was initially planning on keeping the Settings screen only available at the Main Menu, but once I implemented a pause menu, it felt natural to put audio settings there as well. There are many more examples that I could list, but I found that aspect of this iteration to be quite interesting. It's quite nice to sit back and take a look at the project that I've been working on for almost two months. I feel that it is a great reflection of my knowledge and skill, and is potentially something I will work on in the future. 
+
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
 - [X] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
 - [X] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
@@ -35,7 +37,7 @@ Each enemy collision with a fireball reduces their health by 1, and once their h
 - [X] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
 - [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
 - [X] C-6: The release demonstrates the core gameplay loop: the player can take actions that move them toward a goal.
-- [ ] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
+- [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The game runs without errors or warnings.
 - [X] B-3: The source code and project structure comply with our adopted style guides.
 - [X] B-4: Clear progress has been made on the game with respect to the project plan.
