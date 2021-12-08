@@ -59,7 +59,7 @@ I was able to implement a lot of functionality and polish into this iteration. I
 - [X] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
 
-I've earned an **___** on this submission.
+I've earned an **A** on this submission.
 
 ## Layers and Masks
 I wanted the collision scheme to be quite specific between the Player, the Enemies, the fireballs, and the TileMap for the level. In short, I wanted the player to be able to collide with the level and enemies, but keep the enemies from colliding with the level and other enemies. I wanted the fireballs to have a similar collision setup to the player. To do this, I configured the layers and masks of each of these scenes to exist and detect collision on certain layers. 
