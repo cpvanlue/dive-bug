@@ -13,7 +13,7 @@ var immunity := false
 var velocity := Vector2(0, 0)
 
 
-func _ready():
+func _ready() -> void:
 	$Sprite/AnimationPlayer.play("bubblesRight")
 
 
@@ -57,7 +57,6 @@ func _immunityTimer() -> void:
 	set_collision_mask_bit(1, true)
 	set_collision_layer_bit(1, true)
 	immunity = false
-	
 
 
 func _set_direction() -> void:
