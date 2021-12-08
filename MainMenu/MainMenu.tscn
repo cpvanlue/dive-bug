@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Common/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://Common/gear.png" type="Texture" id=3]
 [ext_resource path="res://Settings/Settings.tscn" type="PackedScene" id=4]
 [ext_resource path="res://DifficultySelect/DifficultySelect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MainMenu/fishTile_077.png" type="Texture" id=6]
+[ext_resource path="res://MainMenu/fishTile_081.png" type="Texture" id=7]
+[ext_resource path="res://MainMenu/fishTile_075.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -104,6 +107,47 @@ color = Color( 0.627451, 0.709804, 0.937255, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="BlueFish" type="CPUParticles2D" parent="."]
+position = Vector2( -90.4817, 377.801 )
+amount = 7
+lifetime = 10.0
+speed_scale = 2.38
+randomness = 1.0
+texture = ExtResource( 6 )
+gravity = Vector2( 10, 0 )
+initial_velocity = 175.0
+initial_velocity_random = 0.28
+orbit_velocity = 0.05
+orbit_velocity_random = 1.0
+
+[node name="OrangeFish" type="CPUParticles2D" parent="."]
+position = Vector2( 463.521, 817.511 )
+rotation = -0.523599
+amount = 5
+lifetime = 10.0
+speed_scale = 2.38
+randomness = 1.0
+texture = ExtResource( 7 )
+gravity = Vector2( 10, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.28
+orbit_velocity = 0.05
+orbit_velocity_random = 1.0
+
+[node name="PurpleFish" type="CPUParticles2D" parent="."]
+position = Vector2( 204.775, -85.7196 )
+rotation = 0.523599
+amount = 5
+lifetime = 10.0
+speed_scale = 2.38
+randomness = 1.0
+texture = ExtResource( 8 )
+gravity = Vector2( 10, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.28
+orbit_velocity = -0.05
+orbit_velocity_random = 1.0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 1.0
