@@ -13,6 +13,10 @@ var immunity := false
 var velocity := Vector2(0, 0)
 
 
+func _ready():
+	$Sprite/AnimationPlayer.play("bubblesRight")
+
+
 func _physics_process(delta: float) -> void:
 	if health <= 0:
 		emit_signal("player_death")
@@ -62,6 +66,7 @@ func _set_direction() -> void:
 		if Input.is_action_pressed("sprint"):
 			velocity.x = -speed * 1.5
 		$Animations/AnimatedSprite.flip_h = true
+		$Sprite/AnimationPlayer.play("bubblesLeft")
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
 			if !immunity:
@@ -71,6 +76,7 @@ func _set_direction() -> void:
 		if Input.is_action_pressed("sprint"):
 			velocity.x = speed * 1.5
 		$Animations/AnimatedSprite.flip_h = false
+		$Sprite/AnimationPlayer.play("bubblesRight")
 		if is_on_floor():
 			velocity.x = velocity.x / 1.25
 			if !immunity:
