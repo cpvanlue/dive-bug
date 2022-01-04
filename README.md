@@ -1,5 +1,6 @@
 # Final Project, Iteration 3: Dive Bug
 A project by Caleb Van Lue.
+Playable at https://cpvanlue.github.io/dive-bug/
 
 ## How to Play
 Tug is being attacked by schools of fish! Using A and D or the left and right arrow keys, you can move left and right on the screen. To swim upwards, press Space. To move toward the surface, you can repeatedly swim to gain momentum and move upwards. To move slightly faster, hold Shift.
